@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "matx-confirm-button": [
+        "dist/matx-confirm-button"
+      ],
+      "matx-confirm-button/*": [
+        "dist/matx-confirm-button/*"
+      ]
+    }
   }
 }

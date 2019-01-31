@@ -1,0 +1,92 @@
+<button mat-button
+        *ngIf="buttonToShow === 'matButton' || !buttonToShow"
+        [disabled]="_disabled"
+        [color]="color"
+        (click)="onConfirmButtonClick();"
+        [style.backgroundImage]="'linear-gradient(to right, red 70%, blue 50%)'"
+        class="confirm_button">
+    <ng-container *ngTemplateOutlet="buttonTemplate"></ng-container>
+</button>
+
+<button mat-raised-button
+        *ngIf="buttonToShow === 'matRaisedButton'"
+        [disabled]="_disabled"
+        [color]="color"
+        (click)="onConfirmButtonClick();"
+        class="confirm_button">
+    <ng-container *ngTemplateOutlet="buttonTemplate"></ng-container>
+</button>
+
+<button mat-stroked-button
+        *ngIf="buttonToShow === 'matStrokedButton'"
+        [disabled]="_disabled"
+        [color]="color"
+        (click)="onConfirmButtonClick();"
+        class="confirm_button">
+    <ng-container *ngTemplateOutlet="buttonTemplate"></ng-container>
+</button>
+
+<button mat-flat-button
+        *ngIf="buttonToShow === 'matFlatButton'"
+        [disabled]="_disabled"
+        [color]="color"
+        (click)="onConfirmButtonClick();"
+        class="confirm_button">
+    <ng-container *ngTemplateOutlet="buttonTemplate"></ng-container>
+</button>
+
+<button mat-icon-button
+        *ngIf="buttonToShow === 'matIconButton'"
+        [disabled]="_disabled"
+        [color]="color"
+        (click)="onConfirmButtonClick();"
+        class="confirm_button">
+    <ng-container *ngTemplateOutlet="buttonTemplate"></ng-container>
+</button>
+
+<button mat-fab
+        *ngIf="buttonToShow === 'matFab'"
+        [disabled]="_disabled"
+        [color]="color"
+        (click)="onConfirmButtonClick();"
+        class="confirm_button">
+    <ng-container *ngTemplateOutlet="buttonTemplate"></ng-container>
+</button>
+
+<button mat-mini-fab
+        *ngIf="buttonToShow === 'matMiniFab'"
+        [disabled]="_disabled"
+        [color]="color"
+        (click)="onConfirmButtonClick();"
+        class="confirm_button">
+    <ng-container *ngTemplateOutlet="buttonTemplate"></ng-container>
+</button>
+
+<ng-template #buttonTemplate>
+  <ng-content></ng-content>
+</ng-template>
+
+<ng-template #defaultDialogTemplate>
+  <div fxLayout="row wrap"
+       fxLayoutGap="15px">
+    <div fxFlex="1 1 100%">
+      <h4>{{ questionToShow }}</h4>
+    </div>
+
+    <button mat-raised-button
+            [color]="color"
+            fxFlex="0 0 auto"
+            (click)="onConfirm();"
+            matDialogClose>
+      {{ confirmButtonText }}
+    </button>
+
+    <button mat-raised-button
+            [color]="color"
+            fxFlex="0 0 auto"
+            (click)="onCancel();"
+            matDialogClose>
+      {{ cancelButtonText }}
+    </button>
+  </div>
+</ng-template>
